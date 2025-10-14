@@ -1,0 +1,456 @@
+root@ip-172-31-32-203:/home/ubuntu# useradd shubham
+root@ip-172-31-32-203:/home/ubuntu# useradd sagar
+root@ip-172-31-32-203:/home/ubuntu# useradd sanket
+root@ip-172-31-32-203:/home/ubuntu# tail -5 /etc/passwd
+_chrony:x:110:112:Chrony daemon,,,:/var/lib/chrony:/usr/sbin/nologin
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+shubham:x:1001:1001::/home/shubham:/bin/sh
+sagar:x:1002:1002::/home/sagar:/bin/sh
+sanket:x:1003:1003::/home/sanket:/bin/sh
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu# passwd shubham
+New password:
+Retype new password:
+passwd: password updated successfully
+root@ip-172-31-32-203:/home/ubuntu# passwd sagar
+New password:
+Retype new password:
+passwd: password updated successfully
+root@ip-172-31-32-203:/home/ubuntu# passwd sanket
+New password:
+Retype new password:
+passwd: password updated successfully
+root@ip-172-31-32-203:/home/ubuntu# tail -5 /etc/passwd
+_chrony:x:110:112:Chrony daemon,,,:/var/lib/chrony:/usr/sbin/nologin
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+shubham:x:1001:1001::/home/shubham:/bin/sh
+sagar:x:1002:1002::/home/sagar:/bin/sh
+sanket:x:1003:1003::/home/sanket:/bin/sh
+root@ip-172-31-32-203:/home/ubuntu# tail -5 /etc/shadow
+_chrony:!:20249::::::
+ubuntu:!:20295:0:99999:7:::
+shubham:$y$j9T$ScNdYBK9.OvsR9dv8tbkr1$wIoXuKdq6jzaYy1VJ/5lS.500gy9ivmVAMAYoSC3eC.:20295:0:99999:7:::
+sagar:$y$j9T$edkBGBg2dLj9JaYdFZ/ZT0$y1DUQIh456P4ZTliEOBFZHflf6Gv0jcwa/GAVH9MgG8:20295:0:99999:7:::
+sanket:$y$j9T$U1S7oOx7E.xO.sfkVqXjg/$/EX7cZLXDz/oqJYkB5kY956RrDFTSlyiLZZEbYv8ga4:20295:0:99999:7:::
+root@ip-172-31-32-203:/home/ubuntu# history
+    1  #shutdown now
+    2  clear
+    3  useradd shubham
+    4  useradd sagar
+    5  useradd sanket
+    6  tail -5 /etc/passwd
+    7  passwd shubham
+    8  passwd sagar
+    9  passwd sanket
+   10  tail -5 /etc/passwd
+   11  tail -5 /etc/shadow
+   12  history
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#  groupadd client_loop: send disconnect: Connection reset
+
+C:\Users\Ravi mane>ssh -i "ravimm.pem" ubuntu@ec2-16-171-37-215.eu-north-1.compute.amazonaws.com
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Jul 26 09:14:38 UTC 2025
+
+  System load:  0.0               Temperature:           -273.1 C
+  Usage of /:   25.7% of 6.71GB   Processes:             114
+  Memory usage: 24%               Users logged in:       1
+  Swap usage:   0%                IPv4 address for ens5: 172.31.32.203
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Sat Jul 26 09:00:20 2025 from 152.58.31.246
+ubuntu@ip-172-31-32-203:~$ sudo su
+root@ip-172-31-32-203:/home/ubuntu# groupadd developer
+root@ip-172-31-32-203:/home/ubuntu# groupadd sales
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu# tail -5 /etc/group
+shubham:x:1001:
+sagar:x:1002:
+sanket:x:1003:
+developer:x:1004:
+sales:x:1005:
+root@ip-172-31-32-203:/home/ubuntu# gpasswd --help
+Usage: gpasswd [option] GROUP
+
+Options:
+  -a, --add USER                add USER to GROUP
+  -d, --delete USER             remove USER from GROUP
+  -h, --help                    display this help message and exit
+  -Q, --root CHROOT_DIR         directory to chroot into
+  -r, --remove-password         remove the GROUP's password
+  -R, --restrict                restrict access to GROUP to its members
+  -M, --members USER,...        set the list of members of GROUP
+      --extrausers              use the extra users database
+  -A, --administrators ADMIN,...
+                                set the list of administrators for GROUP
+Except for the -A and -M options, the options cannot be combined.
+root@ip-172-31-32-203:/home/ubuntu# gpasswd -a shubham developer
+Adding user shubham to group developer
+root@ip-172-31-32-203:/home/ubuntu# gpasswd -a sanket developer
+Adding user sanket to group developer
+root@ip-172-31-32-203:/home/ubuntu# tail -5 /etc/group
+shubham:x:1001:
+sagar:x:1002:
+sanket:x:1003:
+developer:x:1004:shubham,sanket
+sales:x:1005:
+root@ip-172-31-32-203:/home/ubuntu# gpasswd -a sagar sales
+Adding user sagar to group sales
+root@ip-172-31-32-203:/home/ubuntu# tail -5 /etc/group
+shubham:x:1001:
+sagar:x:1002:
+sanket:x:1003:
+developer:x:1004:shubham,sanket
+sales:x:1005:sagar
+root@ip-172-31-32-203:/home/ubuntu# tail -5 /etc/gshadow
+shubham:!::
+sagar:!::
+sanket:!::
+developer:!::shubham,sanket
+sales:!::sagar
+root@ip-172-31-32-203:/home/ubuntu# useradd ravi
+root@ip-172-31-32-203:/home/ubuntu# gpasswd -A ravi sales
+root@ip-172-31-32-203:/home/ubuntu# tail -5 /etc/gshadow
+sagar:!::
+sanket:!::
+developer:!::shubham,sanket
+sales:!:ravi:sagar
+ravi:!::
+root@ip-172-31-32-203:/home/ubuntu# client_loop: send disconnect: Connection reset
+
+C:\Users\Ravi mane>ssh -i "ravimm.pem" ubuntu@ec2-16-171-37-215.eu-north-1.compute.amazonaws.com
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Jul 26 09:28:07 UTC 2025
+
+  System load:  0.0               Temperature:           -273.1 C
+  Usage of /:   25.9% of 6.71GB   Processes:             115
+  Memory usage: 26%               Users logged in:       1
+  Swap usage:   0%                IPv4 address for ens5: 172.31.32.203
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Sat Jul 26 09:14:40 2025 from 152.58.31.246
+ubuntu@ip-172-31-32-203:~$ sudo su
+root@ip-172-31-32-203:/home/ubuntu# tty
+/dev/pts/3
+root@ip-172-31-32-203:/home/ubuntu# who
+ubuntu   pts/0        2025-07-26 09:00 (152.58.31.246)
+ubuntu   pts/1        2025-07-26 09:00 (152.58.31.246)
+ubuntu   pts/2        2025-07-26 09:28 (152.58.31.246)
+ubuntu   pts/3        2025-07-26 09:32 (152.58.31.246)
+root@ip-172-31-32-203:/home/ubuntu# who am i
+ubuntu   pts/3        2025-07-26 09:32 (152.58.31.246)
+root@ip-172-31-32-203:/home/ubuntu# cd..
+cd..: command not found
+root@ip-172-31-32-203:/home/ubuntu# cd ..
+root@ip-172-31-32-203:/home# cd -
+/home/ubuntu
+root@ip-172-31-32-203:/home/ubuntu# cd /
+root@ip-172-31-32-203:/# ls
+bin                boot  etc   lib                lib64       media  opt   root  sbin                snap  sys  usr
+bin.usr-is-merged  dev   home  lib.usr-is-merged  lost+found  mnt    proc  run   sbin.usr-is-merged  srv   tmp  var
+root@ip-172-31-32-203:/# cd /home/ubuntu
+root@ip-172-31-32-203:/home/ubuntu# man touch
+root@ip-172-31-32-203:/home/ubuntu# mkdir mane
+root@ip-172-31-32-203:/home/ubuntu# tree
+Command 'tree' not found, but can be installed with:
+snap install tree  # version 2.1.3+pkg-5852, or
+apt  install tree  # version 2.1.1-2
+See 'snap info tree' for additional versions.
+root@ip-172-31-32-203:/home/ubuntu# apt update
+Hit:1 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:3 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:4 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 Packages [15.0 MB]
+Get:5 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:6 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble/universe Translation-en [5982 kB]
+Get:7 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 Components [3871 kB]
+Get:8 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 c-n-f Metadata [301 kB]
+Get:9 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [269 kB]
+Get:10 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse Translation-en [118 kB]
+Get:11 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 Components [35.0 kB]
+Get:12 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 c-n-f Metadata [8328 B]
+Get:13 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1282 kB]
+Get:14 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [260 kB]
+Get:15 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [164 kB]
+Get:16 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1113 kB]
+Get:17 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [284 kB]
+Get:18 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [377 kB]
+Get:19 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [26.0 kB]
+Get:20 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1572 kB]
+Get:21 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [341 kB]
+Get:22 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:23 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [33.2 kB]
+Get:24 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [6772 B]
+Get:25 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:26 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 c-n-f Metadata [592 B]
+Get:27 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [39.9 kB]
+Get:28 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main Translation-en [9152 B]
+Get:29 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7076 B]
+Get:30 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [272 B]
+Get:31 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [28.0 kB]
+Get:32 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [17.1 kB]
+Get:33 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [28.4 kB]
+Get:34 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1304 B]
+Get:35 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+Get:36 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:37 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Get:38 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 c-n-f Metadata [116 B]
+Get:39 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1023 kB]
+Get:40 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [180 kB]
+Get:41 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
+Get:42 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [876 kB]
+Get:43 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [193 kB]
+Get:44 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.3 kB]
+Get:45 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [17.0 kB]
+Get:46 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1484 kB]
+Get:47 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [323 kB]
+Get:48 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:49 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [18.5 kB]
+Get:50 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [4288 B]
+Get:51 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+Get:52 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [380 B]
+Fetched 35.8 MB in 6s (6287 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+91 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@ip-172-31-32-203:/home/ubuntu# apt install tree
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  tree
+0 upgraded, 1 newly installed, 0 to remove and 91 not upgraded.
+Need to get 47.1 kB of archives.
+After this operation, 111 kB of additional disk space will be used.
+Get:1 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 tree amd64 2.1.1-2ubuntu3 [47.1 kB]
+Fetched 47.1 kB in 0s (2385 kB/s)
+Selecting previously unselected package tree.
+(Reading database ... 70681 files and directories currently installed.)
+Preparing to unpack .../tree_2.1.1-2ubuntu3_amd64.deb ...
+Unpacking tree (2.1.1-2ubuntu3) ...
+Setting up tree (2.1.1-2ubuntu3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@ip-172-31-32-203:/home/ubuntu# tree
+.
+└── mane
+
+2 directories, 0 files
+root@ip-172-31-32-203:/home/ubuntu# mkdir -p dir1/dir2/dir3/dir4
+root@ip-172-31-32-203:/home/ubuntu# tree
+.
+├── dir1
+│   └── dir2
+│       └── dir3
+│           └── dir4
+└── mane
+
+6 directories, 0 files
+root@ip-172-31-32-203:/home/ubuntu#
+root@ip-172-31-32-203:/home/ubuntu#  mkdir -p kk/kkk/kkkk
+root@ip-172-31-32-203:/home/ubuntu# tree
+.
+├── dir1
+│   └── dir2
+│       └── dir3
+│           └── dir4
+├── kk
+│   └── kkk
+│       └── kkkk
+└── mane
+
+9 directories, 0 files
+root@ip-172-31-32-203:/home/ubuntu# client_loop: send disconnect: Connection reset
+
+C:\Users\Ravi mane>ssh -i "ravimm.pem" ubuntu@ec2-16-171-37-215.eu-north-1.compute.amazonaws.com
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Jul 26 09:58:40 UTC 2025
+
+  System load:  0.0               Temperature:           -273.1 C
+  Usage of /:   29.2% of 6.71GB   Processes:             121
+  Memory usage: 28%               Users logged in:       1
+  Swap usage:   0%                IPv4 address for ens5: 172.31.32.203
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+94 updates can be applied immediately.
+60 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Sat Jul 26 09:28:09 2025 from 152.58.31.246
+ubuntu@ip-172-31-32-203:~$ sudo su
+root@ip-172-31-32-203:/home/ubuntu# cd ./mane
+root@ip-172-31-32-203:/home/ubuntu/mane# mkdir ravi
+root@ip-172-31-32-203:/home/ubuntu/mane# cd ravi
+root@ip-172-31-32-203:/home/ubuntu/mane/ravi# mkdir hanu ram sagar
+root@ip-172-31-32-203:/home/ubuntu/mane/ravi# tree
+.
+├── hanu
+├── ram
+└── sagar
+
+4 directories, 0 files
+root@ip-172-31-32-203:/home/ubuntu/mane/ravi# cd ./ram
+root@ip-172-31-32-203:/home/ubuntu/mane/ravi/ram# mkdir rohit santosh
+root@ip-172-31-32-203:/home/ubuntu/mane/ravi/ram# tree
+.
+├── rohit
+└── santosh
+
+3 directories, 0 files
+root@ip-172-31-32-203:/home/ubuntu/mane/ravi/ram# cd ../../..
+root@ip-172-31-32-203:/home/ubuntu# tree
+.
+├── dir1
+│   └── dir2
+│       └── dir3
+│           └── dir4
+├── kk
+│   └── kkk
+│       └── kkkk
+└── mane
+    └── ravi
+        ├── hanu
+        ├── ram
+        │   ├── rohit
+        │   └── santosh
+        └── sagar
+
+15 directories, 0 files
+root@ip-172-31-32-203:/home/ubuntu# cd ./mane/ravi/sagar
+root@ip-172-31-32-203:/home/ubuntu/mane/ravi/sagar# client_loop: send disconnect: Connection reset
+
+C:\Users\Ravi mane>ssh -i "ravimm.pem" ubuntu@ec2-16-171-37-215.eu-north-1.compute.amazonaws.com
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-1029-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Jul 26 10:17:34 UTC 2025
+
+  System load:  0.0               Temperature:           -273.1 C
+  Usage of /:   29.2% of 6.71GB   Processes:             124
+  Memory usage: 27%               Users logged in:       1
+  Swap usage:   0%                IPv4 address for ens5: 172.31.32.203
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+94 updates can be applied immediately.
+60 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Sat Jul 26 09:58:41 2025 from 152.58.31.40
+ubuntu@ip-172-31-32-203:~$ vi shree.txt
+"shree.txt" [New] 3L, 27B written
+ubuntu@ip-172-31-32-203:~$ cat shree.txt
+fhaduifg jfnvfojvvo
+jghru
+
+ubuntu@ip-172-31-32-203:~$ touch file.mp3
+ubuntu@ip-172-31-32-203:~$ tree
+.
+├── dir1
+│   └── dir2
+│       └── dir3
+│           └── dir4
+├── file.mp3
+├── kk
+│   └── kkk
+│       └── kkkk
+├── mane
+│   └── ravi
+│       ├── hanu
+│       ├── ram
+│       │   ├── rohit
+│       │   └── santosh
+│       └── sagar
+└── shree.txt
+
+15 directories, 2 files
+ubuntu@ip-172-31-32-203:~$ vi file.txt
+"file.txt" 1L, 9B written
+ubuntu@ip-172-31-32-203:~$ cat
+.bash_history              .cache/                    .sudo_as_admin_successful  file.mp3                   mane/
+.bash_logout               .profile                   .viminfo                   file.txt                   shree.txt
+.bashrc                    .ssh/                      dir1/                      kk/
+ubuntu@ip-172-31-32-203:~$ cat file.txt
+sbdjshdj
+ubuntu@ip-172-31-32-203:~$ history
+    1  sudo su
+    2  vi shree.txt
+    3  cat shree.txt
+    4  touch file.mp3
+    5  tree
+    6  vi file.txt
+    7  cat file.txt
+    8  history
+ubuntu@ip-172-31-32-203:~$

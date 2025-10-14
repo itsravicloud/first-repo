@@ -1,0 +1,166 @@
+  1  mkdir
+    2  mkdir demo
+    3  ls
+    4  rm -rf *
+    5  ls
+    6  mkdir aws
+    7  ls
+    8  cd awd
+    9  mkdir practice
+   10  cd practice
+   11  mkdir Audios Videos Document
+   12  ls
+   13  cd Audios
+   14  cd..
+   15  cd ..
+   16  touch song{1..10}.pm3 video{1..10}.avi file{1..10}.txt
+   17  tree
+   18  apt abdet
+   19  apt update
+   20  apt install tree
+   21  tree
+   22  cd practice/
+   23  shutdown
+   24  cd practice
+   25  cp song{1..10}.mp3 Audios && cp video{1..10}.avi Videos && cp file{1..10}.txt Documents
+   26  ls
+   27  cd ..
+   28  practice directory
+   29  mkdir practice directory
+   30  ls
+   31  mkdir "practice directory"
+   32  ls
+   33  mkdir 'practice directory'
+   34  ls
+   35  cd practice directory
+   36  cd ./practice directory
+   37  cd aws
+   38  cd..
+   39  cd ..
+   40  cd practice directory
+   41  cd 'practice directory'
+   42  cp song{1..5}.mp3 'practice directory' && cp video{1..5}.avi  practice directory' && cp file{1..5}.txt 'practice directory'
+   43  ls
+   44  clear
+   45  cd ..
+   46  cd practice
+   47  ctrl c
+   48  cd practice directory
+   49  cd 'practice directory'
+   50  cd..
+   51  cd ..
+   52  mkdir practice
+   53  cd practice
+   54  mkdir demo
+   55  ls
+   56  cd ..
+   57  mkdir demo
+   58  cd practice
+   59  tree
+   60  shutdown
+   61  tree
+   62  cp ./practice/file{1..10}.txt ./practice/Document && cp ./practice/video{1..10}.avi ./practice/Videos && cp ./practice/song{1..10}.mp3 ./practice/Audios
+   63  cd practice
+   64  cp file{1..10}.txt Documents && cp film{1..10}.avi Videos && cp song{1..10}.mp3 Audios
+   65  cp file{1..10}.txt Document && cp video{1..10}.avi Videos && cp song{1..10}.mp3 Audios
+   66  shutdown
+   67  clear
+   68  ls
+   69  tree
+   70  cd practice
+   71  cp file{1..10}.txt Documents && cp film{1..10}.avi Videos && cp song{1..10}.mp3 Audios
+   72  tree
+   73  date
+   74  cal -3
+   75  apt install ncal
+   76  calapt install ncal
+   77  cal
+   78  mkdir demo
+   79  rmdir -vf demo
+   80  ls
+   81  rmdir demo
+   82  vim gilr.txt
+   83  cat gilr.txt
+   84  rm -r practice
+   85  clear
+   86  date
+   87  cal -3
+   88  cal -4
+   89  cal
+   90  touch demo vaibhav aws
+   91  ls
+   92  ll
+   93  rm -f aws
+   94  ls
+   95  rm -f gilr.txt
+   96  ls
+   97  mkdir xyz abc zy
+   98  ls
+   99  rmdir xyz
+  100  ls
+  101  rm -vf
+  102  ls
+  103  rm -vf *
+  104  ls
+  105  rmdir abc
+  106  ls
+  107  emdir zy
+  108  apt
+  109  ls
+  110  clear
+  111  history
+  112  mkdir aws
+  113  ls
+  114  mkdir ec2
+  115  cp ec2 aws
+  116  cp -r ec2 aws
+  117  cd aws
+  118  ls
+  119  cd ..
+  120  ls
+  121  mv aws ec2
+  122  ls
+  123  cd ec2
+  124  ls
+  125  pwd
+  126  cd ..
+  127  clear
+  128  useradd shubhum
+  129  su -shubhum
+  130  su shubhum
+  131  mkdir anil
+  132  ls
+  133  pwd
+  134  cd anil
+  135  touch anil.txt
+  136  ls
+  137  cd anil.txt
+  138  cat anil.txt
+  139  ls
+  140  vim anil.txt
+  141  cd
+  142  cd home/ubuntu
+  143  crontab -e
+  144  find /laxnam
+  145  crontab -e
+  146  shutdown
+  147  shutdown now
+  148  clear
+  149  crontab -e
+  150  apt update
+  151  crontab -e
+  152  select-editor
+  153  crontab -e
+  154  ls
+  155  crontab -l
+  156  ls
+  157  cd ..
+  158  ls
+  159  cd -
+  160  ls
+  161  date
+  162  find
+  163  find / -name file12346
+  164  crontab -r
+  165  histroy
+  166  history
